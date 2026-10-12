@@ -48,25 +48,29 @@ public class Main {
 		teclado.close();
 	}
 	
+
 	public static void showCharacters(ArrayList<Character> personajes) {
 
-		int amigos = 0;
-		int enemigos = 0;
+        int amigos = 0;
+        int enemigos = 0;
 
-		for (Character personaje : personajes) {
+        System.out.println("\n--- PERSONAJES ---");
 
-		    if (personaje.isEnemy()) {
-		        enemigos++;
-		    } else if (personaje instanceof Friend) {
-		        amigos++;
-		    }
+        for (int i = 0; i < personajes.size(); i++) {
+            Character personaje = personajes.get(i);
 
-		}
+            if (personaje.isEnemy()) {
+                System.out.println(i + ": Enemigo");
+                enemigos++;
+            } else {
+                System.out.println(i + ": Amigo");
+                amigos++;
+            }
+        }
 
-		System.out.println("\n--- PERSONAJES ---");
-		System.out.println("Amigos: " + amigos);
-		System.out.println("Enemigos: " + enemigos);
+        System.out.println("Amigos: " + amigos);
+        System.out.println("Enemigos: " + enemigos);
+    }
 
-		}
 
 }
