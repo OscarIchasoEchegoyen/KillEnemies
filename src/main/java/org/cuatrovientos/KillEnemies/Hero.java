@@ -1,43 +1,45 @@
 package org.cuatrovientos.KillEnemies;
 
-public class Hero implements Character{
+public class Hero implements Character {
+
+	private static final long serialVersionUID = 1L;
 
 	private String nombre;
 	private int enemigosMatados;
 	private int amigosDefendidos;
 
 	public Hero(String nombre) {
-	    this.nombre = nombre;
-	    this.enemigosMatados = 0;
-	    this.amigosDefendidos = 0;
+		this.nombre = nombre;
+		this.enemigosMatados = 0;
+		this.amigosDefendidos = 0;
 	}
 
 	@Override
 	public boolean isEnemy() {
-	    return false;
+		return false;
 	}
 
 	public void attack(Enemy enemy) {
-	    System.out.println("¡He atacado a un enemigo!");
-	    enemy.kill();
-	    enemigosMatados++;
+		System.out.println("¡He atacado a un enemigo!");
+		enemy.kill();
+		enemigosMatados++;
 	}
 
 	public void defend(Friend friend) {
-	    System.out.println("¡He defendido a un amigo!");
-	    amigosDefendidos++;
+		System.out.println("¡He defendido a un amigo!");
+		amigosDefendidos++;
 	}
 
 	public String getNombre() {
-	    return nombre;
+		return nombre;
 	}
 
 	public int getEnemigosMatados() {
-	    return enemigosMatados;
+		return enemigosMatados;
 	}
 
 	public int getAmigosDefendidos() {
-	    return amigosDefendidos;
+		return amigosDefendidos;
 	}
-	
+
 }

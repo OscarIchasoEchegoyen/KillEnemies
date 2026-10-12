@@ -2,7 +2,12 @@ package org.cuatrovientos.KillEnemies;
 
 public class Friend implements Character{
 
-    public boolean isEnemy() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public boolean isEnemy() {
         return false;
     }
     
