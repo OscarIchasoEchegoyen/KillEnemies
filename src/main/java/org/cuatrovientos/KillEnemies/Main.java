@@ -19,12 +19,9 @@ public class Main {
 
 		for (int i = 0; i < 5; i++) {
 			personajes.add(new Friend());
-		}
-
-		for (int i = 0; i < 5; i++) {
 			personajes.add(new Enemy());
 		}
-
+		showCharacters(personajes);
 		Collections.shuffle(personajes);
 
 		System.out.println("\nEl héroe " + hero.getNombre() + " comienza la aventura\n");
@@ -50,5 +47,26 @@ public class Main {
 
 		teclado.close();
 	}
+	
+	public static void showCharacters(ArrayList<Character> personajes) {
+
+		int amigos = 0;
+		int enemigos = 0;
+
+		for (Character personaje : personajes) {
+
+		    if (personaje.isEnemy()) {
+		        enemigos++;
+		    } else if (personaje instanceof Friend) {
+		        amigos++;
+		    }
+
+		}
+
+		System.out.println("\n--- PERSONAJES ---");
+		System.out.println("Amigos: " + amigos);
+		System.out.println("Enemigos: " + enemigos);
+
+		}
 
 }
